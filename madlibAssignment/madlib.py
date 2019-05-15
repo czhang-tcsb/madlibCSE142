@@ -8,7 +8,7 @@ print("Welcome to the game of Mad Libs.")
 print("I will ask you to provide various words")
 print("and phrases to fill in a story.")
 print("The result will be written to an output file.")
-
+i = input()
 
 
 def CVQinput():
@@ -24,6 +24,7 @@ def CVQinput():
         getFileName()
     if(CVQ == "v"):
         print("view function activated")
+        viewOperation()
     if(CVQ == "q"):
         print("quit activated")
 def getFileName():
@@ -32,13 +33,58 @@ def getFileName():
     print("this will show us if file exists")
     print(os.path.exists(GFN))
     while(os.path.exists(GFN) == False):
-        GFN = input("Input File name ")    
+        GFN = input("File not found. Try again: ")
 def createOperation():
     print("This is the create operation")
 def viewOperation():
     print("This is the view operation")
+    getFileName()
+    readFile()
 
-#CVQinput()
+def readFile():
+    if(i == "clothes.txt"):
+        fileToRead = "clothes.txt"
+        fileReader = open(fileToRead)
+        lines = fileReader.readlines()
+        print(lines)
+        for x in range(0, len(lines)):
+            print(lines[x])
+        fileReader.close()
+    elif(i == "dance.txt"):
+        fileToRead = "dance.txt"
+        fileReader = open(fileToRead)
+        lines = fileReader.readlines()
+        print(lines)
+        for x in range(0, len(lines)):
+            print(lines[x])
+        fileReader.close()
+    elif(i == "simple.txt"):
+        fileToRead = "simple.txt"
+        fileReader = open(fileToRead)
+        lines = fileReader.readlines()
+        print(lines)
+        for x in range(0, len(lines)):
+            print(lines[x])
+        fileReader.close()
+    elif(i == "tarzan.txt"):
+        fileToRead = "tarzan.txt"
+        fileReader = open(fileToRead)
+        lines = fileReader.readlines()
+        print(lines)
+        for x in range(0, len(lines)):
+            print(lines[x])
+        fileReader.close()
+    else:
+        fileToRead = "university.txt"
+        fileReader = open(fileToRead)
+        lines = fileReader.readlines()
+        print(lines)
+        for x in range(0, len(lines)):
+            print(lines[x])
+        fileReader.close()
+readFile()
+CVQinput()
 #createOperation()
-#viewOperation()
+viewOperation()
 getFileName()
+#CVQinput()
