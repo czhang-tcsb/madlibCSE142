@@ -8,25 +8,28 @@ print("Welcome to the game of Mad Libs.")
 print("I will ask you to provide various words")
 print("and phrases to fill in a story.")
 print("The result will be written to an output file.")
-i = input()
-
+GFN = 0
+#madlibBool = 1
 
 def CVQinput():
-    CVQ = input("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ")
-    print("This is CVQ: " + CVQ)
-    CVQ = CVQ.lower()
-    print("This is CVQ after lowercased: " + CVQ)
-    while (CVQ != "c" and CVQ != "v" and CVQ != "q"):
+    madlibBool = 1
+    while(madlibBool == 1):
         CVQ = input("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ")
         print("This is CVQ: " + CVQ)
-    if(CVQ == "c"):
-        print("create function activated")
-        getFileName()
-    if(CVQ == "v"):
-        print("view function activated")
-        viewOperation()
-    if(CVQ == "q"):
-        print("quit activated")
+        CVQ = CVQ.lower()
+        print("This is CVQ after lowercased: " + CVQ)
+        while (CVQ != "c" and CVQ != "v" and CVQ != "q"):
+            CVQ = input("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ")
+            print("This is CVQ: " + CVQ)
+        if(CVQ == "c"):
+            print("create function activated")
+            #getFileName()
+        if(CVQ == "v"):
+            print("view function activated")
+            #viewOperation()
+        if(CVQ == "q"):
+            print("quit activated")
+            madlibBool = 0
 def getFileName():
     GFN = input("Input file name ")
     print("GFN: " + GFN)
@@ -42,6 +45,8 @@ def viewOperation():
     readFile()
 
 def readFile():
+
+    '''
     if(i == "clothes.txt"):
         fileToRead = "clothes.txt"
         fileReader = open(fileToRead)
@@ -82,9 +87,9 @@ def readFile():
         for x in range(0, len(lines)):
             print(lines[x])
         fileReader.close()
-readFile()
+    '''
+#readFile()
 CVQinput()
 #createOperation()
-viewOperation()
-getFileName()
-#CVQinput()
+#viewOperation()
+#getFileName()
